@@ -26,21 +26,28 @@ export default function Home() {
   return (
     <main className={poppins.className}>
         <Work />
-      <div className='grid grid-cols-4 gap-4'>
+        <div className='flex justify-center items-center'>
+        <div className='grid grid-cols-3 gap-4'>
     
-       {/*to map you need to add .result in order to make it work which is why there is res.result */}
-       {res.results.map((movies) => (
-                    <Show 
-                    title={movies.title}
-                    released ={movies.released}
-                    genre = {movies.genre}
-                    synopsis = {movies.synposis}
-                    image = {movies.imageurl}
-                    />
-                ))}
-      
-      </div>
+    {/*to map you need to add .result in order to make it work which is why there is res.result */}
+    {res.results.map((movies) => (
+      <div key={movies.imdbid}>
+                 <Show 
+                 title={movies.title}
+                 released ={movies.released}
+                 genre = {movies.genre}
+                 synopsis = {movies.synposis}
+                 image = {movies.imageurl}
+                 />
+             </div>
+             ))}
+             
+   
+   </div>
 
+
+        </div>
+    
      
     </main>
   )
